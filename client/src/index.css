@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --color-brand-navy: #0A0F1E;
+  --color-brand-orange: #FF6B35;
+  --color-brand-light: #F3F4F6;
+  --color-brand-dark: #1F2937;
+  
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-brand-light text-brand-dark antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-orange text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-brand-navy text-white px-6 py-2 rounded-lg font-semibold hover:bg-slate-800 transition-colors shadow-md;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-brand-navy text-brand-navy px-6 py-2 rounded-lg font-semibold hover:bg-brand-navy hover:text-white transition-colors;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow;
+  }
+}
